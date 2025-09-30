@@ -1,5 +1,16 @@
-var opciones=document.getElementsByClassName("opciones");
-//document.getElementById("iberia").addEventListener("click", alert("test1"));
+    window.onload = function() {
+  document.getElementById("binter").onclick = function() {
+    console.log("Binter clicked");
+    location.href = "binter.html";
+  };
+  document.getElementById("iberia").onclick = function() {
+    console.log("Iberia clicked");
+    location.href("iberia.html")
+  };
+  document.getElementById("ryanair").onclick = function() {
+    console.log("Ryanair clicked");
+    location.href("ryanair.html")
+  };
+};
 
-opciones[1].onclick = function(){"alert('test')"};
-//opciones[2].onclick = function(){alert("test3")};
+
