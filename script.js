@@ -1,7 +1,7 @@
     window.onload = function() {
   document.getElementById("binter").onclick = function() {
     console.log("Binter clicked");
-    location.href = "binter.html";
+    location.href = "./Binter/binter.html";
   };
   document.getElementById("iberia").onclick = function() {
     console.log("Iberia clicked");
