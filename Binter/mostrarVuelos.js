@@ -1,5 +1,7 @@
+
 const vuelobinter = {filas: 34, asientos: 2, columnas: 2}
 mostrarVueloBinter()
+
 
 function mostrarVueloBinter() {
     var abc = "abccdefghijklmnopqrstuvwxyz"; //c repetida para no dar problemas con el hueco del pasillo en el bucle.
@@ -12,12 +14,12 @@ function mostrarVueloBinter() {
             for (var x = 0; x < vuelobinter.asientos*vuelobinter.columnas+1; x++){ //Se repite por tantos asientos x columnas + 1 para el hueco del pasillo
             asiento = i+abc.charAt(x);
             if(x== vuelobinter.columnas){
-                document.writeln("<td id = '"+i+"null'>__</td>")
+                document.writeln("<td id = '"+i+"null'><div class = 'null'></div></td>")
             }else{
                 if(checkseat(asiento) == false){ // si el asiento está libre (false).
-                    document.writeln("<td id = '"+i+""+abc.charAt(x)+"', bgcolor='#FFD700'> O </td>")
+                    document.writeln("<td class = 'a' id = '"+i+""+abc.charAt(x)+"'><div class = 'Pasiento'></div> </td>")
                 }else if (checkseat(asiento) == true){  //si el asiento está ocupado (true)
-                    document.writeln("<td id = '"+i+""+abc.charAt(x)+"', bgcolor='#CE5937'> X </td>")
+                    document.writeln("<td class = 'a' id = '"+i+""+abc.charAt(x)+"'> <div class = 'asientoOcup'></div> </td>")
                 }
                 
             }    
@@ -26,12 +28,12 @@ function mostrarVueloBinter() {
             for (var x = 0; x < vuelobinter.asientos*vuelobinter.columnas+1; x++){ //Se repite por tantos asientos x columnas + 1 para el hueco del pasillo
             asiento = i+abc.charAt(x);
             if(x== vuelobinter.columnas){
-                document.writeln("<td id = '"+i+"null'>__</td>")
+                document.writeln("<td id = '"+i+"null'><div class = 'null'></div></td>")
             }else{
                 if(checkseat(asiento) == false){ // si el asiento está libre (false).
-                    document.writeln("<td id = '"+i+""+abc.charAt(x)+"', bgcolor='#6699FF'> O </td>")
+                    document.writeln("<td class = 'a' id = '"+i+""+abc.charAt(x)+"'><div class = 'asiento'></div></td>")
                 }else if (checkseat(asiento) == true){  //si el asiento está ocupado (true)
-                    document.writeln("<td id = '"+i+""+abc.charAt(x)+"', bgcolor='#CE5937'> X </td>")
+                    document.writeln("<td class = 'a' id = '"+i+""+abc.charAt(x)+"'><div class = 'asientoOcup'></div></td>")
                 }
                 
             }    
