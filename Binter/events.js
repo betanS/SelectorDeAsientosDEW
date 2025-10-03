@@ -28,23 +28,30 @@ const asientos = {
     const precioAsiento = document.getElementById('precioAsiento');
     const boton = document.getElementById('botonContinuar');
 
-    //traer todos los elementos con clase "a"
+    // Traer todos los elementos con clase "a"
     const elementos = document.querySelectorAll('.a');
-    //aplicar un on click a todos los elementos "a"
-    elementos.forEach(function(elemento) {
+
+// Aplicar un click listener a cada uno
+  elementos.forEach(function(elemento) {
     elemento.addEventListener('click', function(event) {
+
         const id = event.currentTarget.id;
-        console.log("ID del elemento clickeado:", id);
-        /*if(elemento.target.class == "asiento"){
+        const target = event.target;
+
+          console.log("ID del elemento clickeado:", id);
+          console.log("Clase del hijo clickeado:", target.className);
+
+        // Verifica si el elemento clickeado (o sus padres) tiene alguna de las clases
+        if (target.classList.contains('Pasiento')) {
+           openModal("premium", id);
+       } else if (target.classList.contains('asiento')) {
             openModal("turista", id);
-        }else if(elemento.target.class == "Pasiento"){
-            openModal("premium", id);
-        }else{
-            openModal("ocupado", id)
-        }*/
-        openModal("turista", id); //PREDETERMINADO TURISTA PARA PRUEBAS DE MODAL, CAMBIAR POR IF CUANDO DESCUBRA COMO SELECCIONAR CLASE DEL HIJO
+        } else {
+            openModal("ocupado", id);
+          }
     });
-    });
+  });
+
 
     //Abrir modal, base tipo e id.
     function openModal(type, id){
