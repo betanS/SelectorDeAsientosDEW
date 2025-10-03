@@ -61,6 +61,16 @@ const asientos = {
             asientoDescription.textContent = asientos.Turista.asientoDescription;
             precioAsiento.textContent = asientos.Turista.precioAsiento + "€";
             boton.classList.remove('hidden');
+            /*boton.onclick(
+              var switch = document.getElementById("myToggle");
+element.addEventListener("change", function (event) {
+    if (event.target.checked) {
+        console.log("Checked");
+    } else {
+        console.log("Not checked");
+    }
+});*/
+             // generarPago(id, asientos.Turista.tipoAsiento,  asientos.Turista.asientoDescription, asientos.Turista.precioAsiento, true)
         }else if (type == "premium"){
             idAsiento.textContent = id;
             tipoAsiento.textContent = asientos.Premium.tipoAsiento;
@@ -78,7 +88,7 @@ const asientos = {
     }
 
 
- 
+    
 
   // Cerrar modal
   closeBtn.addEventListener('click', () => {
