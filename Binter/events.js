@@ -26,6 +26,7 @@ const asientos = {
     const tipoAsiento = document.getElementById('tipoAsiento')
     const asientoDescription = document.getElementById('asientoDescription');
     const precioAsiento = document.getElementById('precioAsiento');
+    const residnete = document.getElementById('residente');
     const boton = document.getElementById('botonContinuar');
 
     // Traer todos los elementos con clase "a"
@@ -61,15 +62,8 @@ const asientos = {
             asientoDescription.textContent = asientos.Turista.asientoDescription;
             precioAsiento.textContent = asientos.Turista.precioAsiento + "€";
             boton.classList.remove('hidden');
-            /*boton.onclick(
-              var switch = document.getElementById("myToggle");
-element.addEventListener("change", function (event) {
-    if (event.target.checked) {
-        console.log("Checked");
-    } else {
-        console.log("Not checked");
-    }
-});*/
+/*boton.removeAttribute("id");
+            boton.setAttribute("id", "id_you_like");*/
              // generarPago(id, asientos.Turista.tipoAsiento,  asientos.Turista.asientoDescription, asientos.Turista.precioAsiento, true)
         }else if (type == "premium"){
             idAsiento.textContent = id;
@@ -77,6 +71,7 @@ element.addEventListener("change", function (event) {
             asientoDescription.textContent = asientos.Premium.asientoDescription;
             precioAsiento.textContent = asientos.Premium.precioAsiento+ "€";
             boton.classList.remove('hidden');
+            
         }else if (type == "ocupado"){
             idAsiento.textContent = id;
             tipoAsiento.textContent = asientos.Ocupado.tipoAsiento;
@@ -85,8 +80,12 @@ element.addEventListener("change", function (event) {
             boton.classList.add('hidden');
         }
         modal.classList.remove('hidden');
+        
+        boton.addEventListener('click', () => {
+    console.log('Hola' + idAsiento.textContent + tipoAsiento.textContent + asientoDescription.textContent + precioAsiento.textContent + residente.checked);
+  });
     }
-
+        
 
     
 
