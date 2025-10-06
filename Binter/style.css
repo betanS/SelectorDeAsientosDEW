@@ -41,6 +41,8 @@ img{
 .a div:hover{
   opacity: 0.5;
 }
+
+
 /* Modal */
 #modal {
   position: fixed;
