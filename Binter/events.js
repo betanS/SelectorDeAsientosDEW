@@ -111,7 +111,7 @@ const asientos = {
   });
 
   function generarPago(idAsiento, tipoAsiento, asientoDescription, precioAsiento, residente){
-    var precioResidente = precioAsiento * 0.75;
+    var precioResidente = precioAsiento * 0.25;
     console.log(precioResidente);
     document.writeln(
         'Su asiento es el ' + idAsiento 
@@ -123,3 +123,9 @@ const asientos = {
         document.writeln(precioAsiento);
     }
 }
+
+function saveData(idAsiento, tipoAsiento, asientoDescription, precioAsiento, residente){
+  const datos = [idAsiento, tipoAsiento, asientoDescription, precioAsiento, residente] 
+  localStorage.setItem("Data", JSON.stringify(datos))
+}
+    
