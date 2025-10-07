@@ -1,7 +1,7 @@
 
-const vuelo = {filas: 34, asientos: 3, columnas: 8}
+const vuelo = {filas: 34, asientos: 3, columnas: 3}
 mostrarVuelo()
-
+                //                                              #####################REFACTORIZABLE PARA USAR UN SCRIPT EN LAS 3 COMPAÑIAS
 
 function mostrarVuelo() {
     var abc = "abcNdefNghijklmnopqrstuvwxyz"; //c repetida para no dar problemas con el hueco del pasillo en el bucle.
