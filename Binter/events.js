@@ -5,12 +5,12 @@ const asientos = {
     Premium: {
       asientoDescription: "Viaja en lo mejor y por el mejor precio, con servicio wifi y atención especial.",
       tipoAsiento: "Primera Clase.",
-      precioAsiento: 35 
+      precioAsiento: 90 
     },
     Turista: {
       asientoDescription: "La mejor categoría calidad-precio",
       tipoAsiento: "Clase Turista.",
-      precioAsiento: 20
+      precioAsiento: 60
     },
     Ocupado: {
       asientoDescription: "Este asiento ya ha sido reservado.",
@@ -26,6 +26,7 @@ const asientos = {
     const tipoAsiento = document.getElementById('tipoAsiento')
     const asientoDescription = document.getElementById('asientoDescription');
     const precioAsiento = document.getElementById('precioAsiento');
+    const residentelabel = document.getElementById('residentelabel');
     const residnete = document.getElementById('residente');
     const boton = document.getElementById('botonContinuar');
 
@@ -60,17 +61,17 @@ const asientos = {
             idAsiento.textContent = id;
             tipoAsiento.textContent = asientos.Turista.tipoAsiento;
             asientoDescription.textContent = asientos.Turista.asientoDescription;
-            precioAsiento.textContent += asientos.Turista.precioAsiento;
+            precioAsiento.textContent = asientos.Turista.precioAsiento;
             precioAsiento.classList.remove('hidden');
-            residnete.classList.remove('hidden');
+            residentelabel.classList.remove('hidden');
             boton.classList.remove('hidden');
             }else if (type == "premium"){
             idAsiento.textContent = id;
             tipoAsiento.textContent = asientos.Premium.tipoAsiento;
             asientoDescription.textContent = asientos.Premium.asientoDescription;
-            precioAsiento.textContent += asientos.Premium.precioAsiento;
+            precioAsiento.textContent = asientos.Premium.precioAsiento;
             precioAsiento.classList.remove('hidden');
-            residnete.classList.remove('hidden');
+            residentelabel.classList.remove('hidden');
             boton.classList.remove('hidden');
             
         }else if (type == "ocupado"){
@@ -78,23 +79,16 @@ const asientos = {
             tipoAsiento.textContent = asientos.Ocupado.tipoAsiento;
             asientoDescription.textContent = asientos.Ocupado.asientoDescription;
             precioAsiento.classList.add('hidden');
-            residnete.classList.add('hidden');
+            residentelabel.classList.add('hidden');
             boton.classList.add('hidden');
         }
         modal.classList.remove('hidden');
         
         boton.addEventListener('click', () => {
-          //Hay que implementar un localstorage para guardar todos estos datos y recuperarlos despues del href
-          //1ºguarda setContent key(data)   Info(idAsiento.textContent + tipoAsiento.textContent + asientoDescription.textContent + precioAsiento.textContent + residente.checked)
-          //2ºhref pantallaPago.html
-          //3º PantallaPago.html hace generarPantalla en js haciendo un get data 
-          //4º Al confirmar la compra hace un set idasiento --- ocupado
-          //5º todo funciona a la primera y soy felih, proyecto parte tecnica terminada, duplicar en iberia y ryanair :)!
-    console.log('Hola' + idAsiento.textContent + tipoAsiento.textContent + asientoDescription.textContent + precioAsiento.textContent + residente.checked);
-    //location.href = "pantallaPago.html";
-    generarPago(idAsiento.textContent, tipoAsiento.textContent, asientoDescription.textContent, precioAsiento.textContent, residnete.checked);
-    
-  });
+        console.log('Datos del vuelo:' + idAsiento.textContent + tipoAsiento.textContent + asientoDescription.textContent + precioAsiento.textContent + residnete.checked);
+        saveData(idAsiento.textContent, tipoAsiento.textContent, asientoDescription.textContent, precioAsiento.textContent, residnete.checked);
+        location.href = "../pantallaPago.html";
+      });
     }
         
 

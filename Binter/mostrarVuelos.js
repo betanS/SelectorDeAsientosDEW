@@ -48,18 +48,6 @@ function mostrarVueloBinter() {
 
 
 
-
-function saveseat(id){
-    if (localStorage.getItem(id) != null){
-        console.log("ERROR: Asiento "+id+" ya registrado. Expected true.")
-        return true;
-    }else{
-        localStorage.setItem(id, id)
-        console.log(""+id+" Guardado correctamente. Expected false.")
-        return false;
-    }
-    
-}
 function checkseat(id){
     if(localStorage.getItem(id)!= null){
         console.log("El asiento existe, devolviendo true, expected X");
