@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binter</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!--Modal oculto-->
+            <div id="modal" class="hidden">
+                <div class="modal-content">
+                    <span id="closeBtn">&times;</span>
+                    <h2 id="idAsiento"></h2>
+                    <h2 id = "tipoAsiento"></h2>
+                    <p id="asientoDescription"></p>
+                    <p id="precioAsiento"></p>
+                    <label id = "residentelabel" class="switch">
+                        <input type="checkbox" id = "residente"><p>Residente?</p>
+                    </label>
+                    <br>
+                    <button id="botonContinuar">Continuar</button>
+                </div>
+            </div>
+   <script src = "mostrarVuelos.js"></script>
+   <script src = "events.js"></script>
+</body>
+</html>

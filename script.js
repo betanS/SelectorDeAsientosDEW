@@ -5,11 +5,11 @@
   };
   document.getElementById("iberia").onclick = function() {
     console.log("Iberia clicked");
-    location.href("iberia.html")
+    location.href = "./Iberia/iberia.html";
   };
   document.getElementById("ryanair").onclick = function() {
     console.log("Ryanair clicked");
-    location.href("ryanair.html")
+    location.href = "./Ryanair/ryanair.html";
   };
 };
 

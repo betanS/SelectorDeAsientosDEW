@@ -1,12 +1,19 @@
+//recupera los datos guardados
 var datosguardados = JSON.parse(localStorage.Data);
 console.log(datosguardados.Data);
+
 var idvuelo = datosguardados[0];
 var tipoAsiento = datosguardados[1];
 var asientoDescription = datosguardados[2];
 var precioAsiento = datosguardados[3];
 var residente = datosguardados[4];
 console.log('Datos del vuelo 2:' + idvuelo + tipoAsiento + asientoDescription + precioAsiento + residente);
+
+
 generarPago(idvuelo, tipoAsiento, asientoDescription, precioAsiento, residente)
+
+
+// funcion para la lógica y generacion de contenido de la pantalla de pagos
 function generarPago(idvuelo, tipoAsiento, asientoDescription, precioAsiento, residente){
     var precioResidente = precioAsiento * 0.25;
     var precioFinal = 0;
