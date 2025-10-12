@@ -1,6 +1,4 @@
-
-
-    //Tipos de asiento con sus valores predeterminados
+  //Tipos de asiento con sus valores predeterminados
 const asientos = {
     Premium: {
       asientoDescription: "Viaja en lo mejor y por el mejor precio, con servicio wifi y atención especial.",
@@ -110,3 +108,9 @@ function saveData(idAsiento, tipoAsiento, asientoDescription, precioAsiento, res
   localStorage.setItem("Data", JSON.stringify(datos))
 }
     
+
+const backbutton = document.getElementById('backbutton'); 
+//backpage event
+backbutton.addEventListener('click', () => { history.go(-1); });
+
+
